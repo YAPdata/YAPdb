@@ -5,7 +5,7 @@ import ExportStyledPDF from './ExportStyledPDF.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAdd } from '@fortawesome/free-solid-svg-icons';
 
-const EvaluationView = ({player}) => {
+const EvaluationView = ({player}) => { 
 
     const [ratings, setRatings] = useState([{}]);
     const [isRate, setIsRate] = useState(false);
