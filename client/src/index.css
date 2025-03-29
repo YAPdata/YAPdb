@@ -17,8 +17,8 @@
     scrollbar-width: none; /* For Firefox */
   }
 
-  --primary: #94151e;
-  --seocondary: #fafafa;
+  --primary: #232323;
+  --secondary: #9e9d9d;
   --hover: #250000;
   --filter: #060000;
   --text: #ebebeb;

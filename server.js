@@ -8,7 +8,7 @@ const scoutRoute = require("./routes/scout")
 const playerRoute = require("./routes/players")
 const evaluationRoute = require("./routes/evaluation")
 
-app.use(cors())
+app.use(cors()) 
 app.use(express.json())
 app.use("/scouts", scoutRoute)
 app.use("/players", playerRoute)

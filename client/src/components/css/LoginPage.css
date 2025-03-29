@@ -27,7 +27,7 @@
 .login-box {
   position: relative;
   z-index: 2;
-  background: #181818;
+  background: var(--secondary);
   padding: 3rem;
   border-radius: 2px;
   width: 20rem;
@@ -58,7 +58,7 @@
 
 .login-button {
   background-color: var(--primary);
-  color: var(--altText);
+  color: var(--text);
   width: 50%;
 }
 

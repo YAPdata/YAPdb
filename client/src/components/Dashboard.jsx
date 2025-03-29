@@ -103,8 +103,8 @@ const Dashboard = () => {
       <div className="dash holder">
         <div className='sidebar'>
           <div className="logo">
-              <img src="/diammers.png" alt="" />
-              <h4>DIAMBARS</h4>
+              <img src="/yap.png" alt="" />
+              <h4>Y<span>A</span>P</h4>
           </div>
           <ul>
               <li onClick={() => handleComponentChange(`A`)}>
