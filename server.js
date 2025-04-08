@@ -18,8 +18,7 @@ app.use('/uploads', express.static('uploads'))
 const client = express.static(path.join(__dirname, '/client/dist'))
 const indexHTML = path.join(__dirname, '/client/dist/index.html')
 app.use(client)
-app.get("*", (req,res) => res.sendFile(indexHTML))
-
+app.get("*", (req,res) => res.sendFile(indexHTML)) 
 
 const dbo = require("./db/conn")
 

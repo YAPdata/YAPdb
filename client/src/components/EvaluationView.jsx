@@ -73,7 +73,7 @@ const EvaluationView = ({player}) => {
                 </div>
                 <div className="personal_detail">
                     <span>Agent: </span>
-                    <p>{player.Agent}</p>
+                    <p>{player.Agent== "" ? "N/A" : `${player.Agent} cm`}</p>
                 </div>
                 <div className="personal_detail">
                     <span>Contract Length: </span>

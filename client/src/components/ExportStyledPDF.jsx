@@ -14,7 +14,7 @@ const ExportStyledPDF = ({player, evaluation}) => {
     };
 
     const handleEmptyFields = (field) =>{
-      return field.length === 0 ? "N/A" : field;
+      return field?.length === 0 || field == undefined ? "N/A" : field;
     }
     
     // Adding an Image (e.g., logo or profile picture)
@@ -60,14 +60,14 @@ const ExportStyledPDF = ({player, evaluation}) => {
       doc.text(`Preferred Foot: ${player.Preferred_Foot}`, 20, 120);
       doc.text(`Agent: ${handleEmptyFields(player.Agent)}`, 20, 130);
       doc.text(`Region Scouted In: ${handleEmptyFields(player.Region_scouted_in)}`, 20, 140);
-      doc.text(`Market Value: ${handleEmptyFields(player.Market_Value)}`, 20, 150);
+      doc.text(`Market Value(EUR/£): ${handleEmptyFields(player.Market_Value)}`, 20, 150);
 
       
       doc.text(`Club: ${player.Club}`, 110, 90);
       doc.text(`Height: ${handleEmptyFields(player.Height)} cm`, 110, 100);
       doc.text(`Position: ${player.Position}`, 110, 110);
       doc.text(`Scouted by: ${player.Scouted_By}`, 110, 120);
-      doc.text(`Agent Contact: ${handleEmptyFields(player.Number_of_agent)} euros`, 110, 130);
+      doc.text(`Agent Contact: ${handleEmptyFields(player.Number_of_agent)}`, 110, 130);
       doc.text(`Contracts ends in: ${handleEmptyFields(player.Contract)}`, 110, 140);
       
       

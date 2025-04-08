@@ -117,11 +117,12 @@ const AddForm = ({scoutName}) => {
   }
 
   const emptyFieldString = (field) => {
-    return field.length === 0 ? "N/A" : field;
+    return field?.length === 0  ? "N/A" : field;
 }
+// ||
 
 const emptyFieldNumber = (field) => {
-    return field.length === 0 ? 0 : field;
+    return field?.length === 0 ? 0 : field;
 }
 
   // Handle form submission
@@ -152,7 +153,7 @@ const emptyFieldNumber = (field) => {
     formData.append('Last_name', playerData.lastname);
     formData.append('Gender', playerData.gender);
     formData.append('Date_of_Birth', playerData.dob);
-    formData.append('Height', playerData?.height);
+    formData.append('Height', emptyFieldString(playerData.height));
     formData.append('Position', playerData.position);
     formData.append('Preferred_Foot', playerData.foot);
     formData.append('Region_scouted_in', playerData.region);
@@ -164,7 +165,7 @@ const emptyFieldNumber = (field) => {
     formData.append('NationalityISO', countrySearch.code);
     formData.append('Status', playerData.status);
     formData.append('Scouted_By', scoutName);
-    formData.append('Contract', playerData.contract);
+    formData.append('Contract', emptyFieldString(playerData.contract));
     formData.append('Market_Value', emptyFieldNumber(playerData.marketValue));
     formData.append('Date_Added', getTodayDate());
 
@@ -233,7 +234,7 @@ const emptyFieldNumber = (field) => {
               <option value="Female">Female</option>
             </select>
             <input type="date" name='dob' value={playerData.dob} onChange={handleInputChange} placeholder="Date of birth" required/>
-            <input type="text" name='height' value={playerData?.height} onChange={handleInputChange} placeholder="Height in cm"/>
+            <input type="text" name='height' value={playerData.height} onChange={handleInputChange} placeholder="Height in cm"/>
 
             <select  name="nationality" id="nationality" value={playerData.nationality} onChange={handleInputChange}>
             <option value="">--Select Nationality --</option>

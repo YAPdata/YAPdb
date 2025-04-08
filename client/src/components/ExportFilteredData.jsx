@@ -1,6 +1,6 @@
 import React, { useState , useEffect} from 'react';
-import jsPDF from 'jspdf';
-import 'jspdf-autotable';
+import {jsPDF} from 'jspdf';
+import autoTable from "jspdf-autotable";
 import './css/ExportFilteredData.css'
 import logo from '/yap.png';
 
@@ -50,10 +50,10 @@ const PlayerListPDF = ({players, gotoDash}) => {
     doc.text(`Report Description: ${userText}` || 'No additional notes provided.', 14, 45);
 
     // Add a table with player data
-    doc.autoTable({
+    autoTable(doc, {
       startY: 60, // Start below the user text
       head: [['#', 'Name', 'Date of Birth', 'Position', 'Nationality', 'Scouted By', 'Status']],
-      headStyles: { fillColor: [10, 10, 10], textColor: 255, fontSize: 14 },
+      headStyles: { fillColor: [10, 10, 10], textColor: 255, fontSize: 12 },
       bodyStyles: { fontSize: 10 },
       styles: { halign: "center" },
       body: data.map((player, index) => [

@@ -8,6 +8,7 @@ const PlayerSchema = new mongoose.Schema({
     Date_of_Birth: Date,
     Position: String,
     Nationality: String,
+    Height: String,
     NationalityISO: String,
     Club: String, 
     Preferred_Foot: String,
@@ -18,14 +19,10 @@ const PlayerSchema = new mongoose.Schema({
     Scouted_By: String,
     Date_Added: Date,
     Image: String,
-    TrialsStart: Date,
-    TrialsEnd: Date,
-    Comments: [
-        {
-            comment: String,
-            dateCreated: Date
-        }
-    ]
+    Agent: String,
+    Number_of_agent: String,
+    Market_Value: Number,
+    Contract: Number,
 })
 
 const PlayerModel = mongoose.model("Player", PlayerSchema) //creating a collection

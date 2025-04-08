@@ -11,7 +11,7 @@
   display: none;
   
 }
-
+ 
 /* Hide scrollbar for Firefox */
   * {
     scrollbar-width: none; /* For Firefox */
