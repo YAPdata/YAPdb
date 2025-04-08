@@ -33,48 +33,6 @@ const EvaluationView = ({player}) => {
             return date.toLocaleDateString();  // This will format the date according to the user's locale
         };
 
-        
-        //     const predefinedOrder = ["Physicality", "In_Posession", "Out_of_Posession", "Weakness", "Summary"];
-            
-        //     const evaluationArray = Object.values(ratings);
-
-
-        //     const sortedEvaluationArray = evaluationArray.sort(
-        //     (a, b) => predefinedOrder.indexOf(a.id) - predefinedOrder.indexOf(b.id)
-        //     );
-
-        //     const sortedEvaluationObject = Object.fromEntries(
-        //     sortedEvaluationArray.map((item) => [item.id, item])
-        //     );
-
-        //     console.log("x" + sortedEvaluationObject);
-        //     // Predefined order
-            
-
-        //     // Sort based on predefined order
-        //     const sortedRatings = Object.entries(ratings).sort(
-        //         ([keyA], [keyB]) => predefinedOrder.indexOf(keyA) - predefinedOrder.indexOf(keyB)
-        //     );
-
-        //     return Object.entries(ratings).map(([key, value]) => {
-        //         const header = key.replace(/_/g, " ");
-        //         if(!(key.toUpperCase() === "PLAYER_ID" || key.toUpperCase() === "_ID" || key.toUpperCase() === "NOTE")){
-        //             return (
-        //                 <div key={key} className="noteView">
-        //                     <span>{header}</span>
-        //                     <div className="noteValue">
-        //                         {value}
-        //                     </div>
-        //                 </div>
-        //             ); 
-        //         }
-                
-        //     });
-        // }
-
-         // Handle changes for input fields
-
-
   return (
     <div className="view_wrapper">
         <div className="view_personal">
@@ -95,7 +53,7 @@ const EvaluationView = ({player}) => {
                 </div>
                 <div className="personal_detail">
                     <span>Height: </span>
-                    <p>{player.Height== "" ? "N/A" : `${player.Height} cm`}</p>
+                    <p>{player?.Height== "" ? "N/A" : `${player.Height} cm`}</p>
                 </div>
                 <div className="personal_detail">
                     <span>Position: </span>
