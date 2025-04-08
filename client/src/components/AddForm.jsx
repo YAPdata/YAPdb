@@ -128,11 +128,6 @@ const emptyFieldNumber = (field) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    console.log("position: " + playerData.position);
-    console.log("nationality: " + playerData.nationality);
-    console.log("foot: " + playerData.foot);
-    console.log("gender: " + playerData.gender);
-    console.log("status: " + playerData.status);
     if (
       playerData.gender.length === 0 || playerData.status.length === undefined || playerData.nationality.length === undefined
       || playerData.foot.length === 0 || playerData.position.length === 0
@@ -157,7 +152,7 @@ const emptyFieldNumber = (field) => {
     formData.append('Last_name', playerData.lastname);
     formData.append('Gender', playerData.gender);
     formData.append('Date_of_Birth', playerData.dob);
-    formData.append('Height', playerData.height);
+    formData.append('Height', playerData?.height);
     formData.append('Position', playerData.position);
     formData.append('Preferred_Foot', playerData.foot);
     formData.append('Region_scouted_in', playerData.region);
@@ -232,13 +227,13 @@ const emptyFieldNumber = (field) => {
           <form className="registration-form" onSubmit={handleSubmit}>
           <input type="text" name='firstname' value={playerData.firstname} onChange={handleInputChange} placeholder="Firstname of player" required/>
           <input type="text" name='lastname' value={playerData.lastname} onChange={handleInputChange} placeholder="Lastname of player" required/>
-            <select name="gender" id="gender" value={playerData.gender} onChange={handleInputChange} defaultValue="Male">
+            <select name="gender" id="gender" value={playerData.gender} onChange={handleInputChange} >
               <option value="">-- Select gender --</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
             </select>
             <input type="date" name='dob' value={playerData.dob} onChange={handleInputChange} placeholder="Date of birth" required/>
-            <input type="text" name='height' value={playerData.height} onChange={handleInputChange} placeholder="Height in cm" defaultValue={"N/A"}/>
+            <input type="text" name='height' value={playerData?.height} onChange={handleInputChange} placeholder="Height in cm"/>
 
             <select  name="nationality" id="nationality" value={playerData.nationality} onChange={handleInputChange}>
             <option value="">--Select Nationality --</option>
@@ -267,18 +262,18 @@ const emptyFieldNumber = (field) => {
               <option value="Left">Left</option>
               <option value="Right">Right</option>
             </select>
-            <input type="text" name='region' value={playerData.region} onChange={handleInputChange} placeholder="Region Scouted" defaultValue={"N/A"}/>
+            <input type="text" name='region' value={playerData.region} onChange={handleInputChange} placeholder="Region Scouted"/>
             <input type="text" name='club' value={playerData.club} onChange={handleInputChange} placeholder="Club name" required/>
-            <input type="text" name='agentName' value={playerData.agentName} onChange={handleInputChange} placeholder="Agent" defaultValue={"N/A"}/>
-            <input type="tel" name='agentTel' value= {playerData.agentTel} onChange={handleInputChange} placeholder="Agent Tel:" defaultValue={"N/A"}/>
+            <input type="text" name='agentName' value={playerData.agentName} onChange={handleInputChange} placeholder="Agent" />
+            <input type="tel" name='agentTel' value= {playerData.agentTel} onChange={handleInputChange} placeholder="Agent Tel:" />
             <select name="status" id="status" value={playerData.status} onChange={handleInputChange}>
               <option value="">-- Select Status --</option>
-              <option value="Signed" defaultValue>Signed</option>
+              <option value="Signed">Signed</option>
               <option value="Follow">Follow</option>
               <option value="Trials">Trials</option>
               <option value="Leave">Leave</option>
             </select>
-            <input type="number" name='marketValue' value={playerData.marketValue} onChange={handleInputChange} placeholder="Market value in euros" defaultValue={"N/A"}/>
+            <input type="number" name='marketValue' value={playerData.marketValue} onChange={handleInputChange} placeholder="Market value in euros" />
             <input type="number" name='contract' value={playerData.contract} onChange={handleInputChange} placeholder="Contract ends in " />
             <input type="file" id="image" name="image" onChange={handleFileChange}  accept="image/png , image/jpeg, image/jpg" required/>
             <div className="btnsub">
