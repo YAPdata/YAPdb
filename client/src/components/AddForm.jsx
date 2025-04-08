@@ -130,8 +130,8 @@ const emptyFieldNumber = (field) => {
     e.preventDefault();
     setLoading(true);
     if (
-      playerData.gender.length === 0 || playerData.status.length === undefined || playerData.nationality.length === undefined
-      || playerData.foot.length === 0 || playerData.position.length === 0
+      playerData.gender?.length === 0 || playerData.status?.length === undefined || playerData.nationality?.length === undefined
+      || playerData.foot?.length === 0 || playerData.position?.length === 0
     ) {
       setFlagMessage("Kindly enter all the details of the player");
       setIsVisible(true);

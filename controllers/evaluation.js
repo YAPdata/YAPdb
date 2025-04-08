@@ -36,6 +36,7 @@ const getEvaluation = async (req,res) => {
 
 const deleteEvaluation = async (req, res) => {
     try{
+         const db_connect = dbo.getDb()
          const {id} = req.params
          const evaluation = await db_connect.collection("evaluation").deleteOne(id)
          if (!evaluation) {
