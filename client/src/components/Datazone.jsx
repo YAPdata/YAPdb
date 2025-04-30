@@ -207,7 +207,6 @@ const Datazone = ({scoutName}) => {
         try {
           const data = await apiService.delete(`/players/delete/${pid}`);
           const evaDel = await apiService.delete(`/evaluation/delete/${pid}`);
-          fetchPlayers();
           window.location.reload();
         } catch (e) {
           setErr("Failed to delete player: " + e);
